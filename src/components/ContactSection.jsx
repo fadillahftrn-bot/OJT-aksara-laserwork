@@ -142,14 +142,12 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="mb-2 uppercase tracking-wide">
-                      Alamat Workshop
+                      Alamat Tempat OJT
                     </h4>
                     <p className="text-muted-foreground">
-                      Jl. Industri Raya No. 123
+                      Aksara Laserwork
                       <br />
-                      Kawasan Industri Modern
-                      <br />
-                      Jakarta Timur 13510, Indonesia
+                      QWHC+H8M, Suci, Kec. Karangpawitan, Kabupaten Garut, Jawa Barat
                     </p>
                   </div>
                 </div>

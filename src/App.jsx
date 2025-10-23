@@ -1,12 +1,17 @@
-import imgLogo from "figma:asset/logo aksara laserwork.png";
-import imgImage1 from "figma:asset/2ba893119cdefcc658bacbf83d0cce620b8a6b87.png";
-import imgMedal from "figma:asset/b24c345b80e6f4acc58b0cd922771e5bff3dba8c.png";
-import imgPhoneCase from "figma:asset/17e2c7ea06f14e03553f5631fed8a5b40a96e287.png";
-import imgIDCard from "figma:asset/6baa386336af256ba5396f72222e10c81fbeee9c.png";
-import imgWallet from "figma:asset/fe85ece97d8d93fc7f3bd273ca6bf162556f58e3.png";
-import imgWoodenPlaque from "figma:asset/28858c03849d3f5913f775ebd04bade7819da61a.png";
-import imgKeychain from "figma:asset/gantungan kunci.png";
-import imgNumberPlaques from "figma:asset/d333b6b1037c794a45a537312cab81395565dc7f.png";
+//import imgLogo from "figma:asset/logo aksara laserwork.png";
+import imgLogo from "./assets/aksara-laserwork.png";
+import imgGantunganKunci from "./assets/gantungan-kunci.png";
+import imgGKunciMobil from "./assets/gantungan-kunci-mobil .png";
+import imgNoMeja from "./assets/no-meja.png";
+import imgUkiran from "./assets/ukiran.png"
+import imgImage1 from "./assets/holder-polos.jpg";
+import imgPlakat from "./assets/plakat.jpg";
+import imgPhoneCase from "./assets/softcase-ukir.jpg";
+import imgIDCard from "./assets/id-holder.jpg";
+import imgWallet from "./assets/piagam.jpg";
+import imgWoodenPlaque from "./assets/pin.jpg";
+import imgKeychain from "./assets/holder-ukir.jpg";
+import imgNumberPlaques from "./assets/softcase.jpg";
 import { useState } from "react";
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 import { Card, CardContent } from "./components/ui/card";
@@ -30,77 +35,80 @@ import {
 } from "lucide-react";
 
 export default function FigmaHome() {
-  const [activeSection, setActiveSection] = useState('beranda');
+  const [activeSection, setActiveSection] = useState("beranda");
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId.toLowerCase());
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    alert(
+      "Terima kasih! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda."
+    );
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
     <div className="bg-white relative w-full min-h-screen">
-      {/* Header/Navigation */}
+      {/* Header */}
       <header className="bg-[#3d4451] h-[114px] w-full fixed top-0 left-0 z-50 border-b border-[#2d3748]">
-        <div className="max-w-[1440px] mx-auto h-full flex items-center justify-between px-6">
+        <div className="max-w-[1400px] mx-auto h-full flex items-center justify-between px-6">
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <div className="h-[80px] w-[80px] flex items-center justify-center">
-              <img 
-                src={imgLogo} 
-                alt="Aksara Laserwork Logo" 
+              <img
+                src={imgLogo}
+                alt="Aksara Laserwork Logo"
                 className="w-full h-full object-contain"
               />
             </div>
+            <h1 className="text-white text-2xl font-bold">Aksara Laserwork</h1>
           </div>
 
-          {/* Navigation Menu */}
+          {/* Navigation */}
           <nav className="flex items-center space-x-4">
             <button
-              onClick={() => scrollToSection('beranda')}
-              className={`h-[61px] px-6 rounded-[10px] text-white text-[20px] font-normal transition-all ${
-                activeSection === 'beranda' 
-                  ? 'bg-[#3d4451] border border-[#eeeeee]' 
-                  : 'bg-[#3d4451] border border-[#8c7dae] hover:border-[#eeeeee]'
+              onClick={() => scrollToSection("beranda")}
+              className={`h-[61px] px-6 rounded-[10px] text-white text-[20px] transition-all ${
+                activeSection === "beranda"
+                  ? "bg-[#3d4451] border border-[#eeeeee]"
+                  : "bg-[#3d4451] border border-[#8c7dae] hover:border-[#eeeeee]"
               }`}
             >
               BERANDA
             </button>
             <button
-              onClick={() => scrollToSection('layanan')}
-              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] font-normal hover:border-[#eeeeee] transition-all"
+              onClick={() => scrollToSection("layanan")}
+              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] hover:border-[#eeeeee] transition-all"
             >
               LAYANAN
             </button>
             <button
-              onClick={() => scrollToSection('galeri')}
-              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] font-normal hover:border-[#eeeeee] transition-all"
+              onClick={() => scrollToSection("galeri")}
+              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] hover:border-[#eeeeee] transition-all"
             >
               GALERI
             </button>
             <button
-              onClick={() => scrollToSection('tentang')}
-              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] font-normal hover:border-[#eeeeee] transition-all"
+              onClick={() => scrollToSection("tentang")}
+              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] hover:border-[#eeeeee] transition-all"
             >
               TENTANG KAMI
             </button>
             <button
-              onClick={() => scrollToSection('kontak')}
-              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] font-normal hover:border-[#eeeeee] transition-all"
+              onClick={() => scrollToSection("kontak")}
+              className="h-[61px] px-6 rounded-[10px] bg-[#3d4451] border border-[#8c7dae] text-white text-[20px] hover:border-[#eeeeee] transition-all"
             >
               KONTAK
             </button>
@@ -109,7 +117,10 @@ export default function FigmaHome() {
       </header>
 
       {/* Hero Section */}
-      <section id="beranda" className="bg-[#515761] min-h-[455px] w-full mt-[114px] relative overflow-hidden">
+      <section
+        id="beranda"
+        className="bg-[#515761] min-h-[455px] w-full mt-[114px] relative overflow-hidden"
+      >
         <div className="max-w-[1440px] mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <div className="space-y-6">
@@ -117,22 +128,26 @@ export default function FigmaHome() {
               Presisi dalam Setiap Potongan
             </h1>
             <p className="text-[24px] text-white font-normal leading-relaxed">
-              Aksara Laserwork menghadirkan layanan laser cutting dan engraving profesional
-              <br />
-              dengan ketelitian tinggi untuk kebutuhan industri maupun kreatif.
+              Aksara Laserwork menghadirkan layanan laser cutting dan engraving
+              profesional dengan ketelitian tinggi untuk kebutuhan industri
+              maupun kreatif.
             </p>
-            
-            {/* CTA Buttons */}
+
             <div className="flex space-x-6 pt-8">
-              <button 
-                onClick={() => scrollToSection('layanan')}
-                className="bg-[#dd7311] hover:bg-[#c66510] transition-colors h-[71px] px-8 rounded-[15px] text-white text-[24px] font-normal"
+              <button
+                onClick={() => scrollToSection("layanan")}
+                className="bg-[#dd7311] hover:bg-[#c66510] transition-colors h-[71px] px-8 rounded-[15px] text-white text-[24px]"
               >
                 LIHAT LAYANAN
               </button>
-              <button 
-                onClick={() => scrollToSection('kontak')}
-                className="bg-[#dd7311] hover:bg-[#c66510] transition-colors h-[71px] px-8 rounded-[15px] text-white text-[24px] font-normal"
+              <button
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/6287830617650?text=Halo%20saya%20ingin%20menghubungi%20Anda%20untuk%20konsultasi",
+                    "_blank"
+                  )
+                }
+                className="bg-[#dd7311] hover:bg-[#c66510] transition-colors h-[71px] px-8 rounded-[15px] text-white text-[24px]"
               >
                 HUBUNGI KAMI
               </button>
@@ -141,15 +156,14 @@ export default function FigmaHome() {
 
           {/* Right Image */}
           <div className="relative">
-            <img 
-              src={imgImage1} 
-              alt="Laser Cutting Machine" 
+            <img
+              src={imgImage1}
+              alt="Laser Cutting Machine"
               className="w-full h-[369px] object-cover rounded-lg shadow-2xl"
             />
           </div>
         </div>
       </section>
-
       {/* Why Choose Us Section */}
       <section id="tentang" className="bg-white min-h-[359px] w-full py-12">
         <div className="max-w-[1440px] mx-auto px-6">
@@ -326,17 +340,17 @@ export default function FigmaHome() {
             <Card className="group overflow-hidden border-l-4 border-l-[#dd7311] hover:shadow-xl transition-all">
               <div className="relative overflow-hidden aspect-[4/3]">
                 <img 
-                  src={imgMedal}
+                  src={imgPlakat}
                   alt="Laser Engraving Medal"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <p className="text-white">Medali Custom Laser Engraving</p>
+                  <p className="text-white">Box Kayu Tempat Rokok Custom Laser Engraving</p>
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="text-lg mb-2">Medali Kayu Custom</h3>
-                <p className="text-sm text-muted-foreground">Laser Engraving - Volleyball Cup 2023</p>
+                <h3 className="text-lg mb-2">Box kayu tempat Rokok Custom </h3>
+                <p className="text-sm text-muted-foreground">Laser Engraving - KODIM 06/11 Garut</p>
               </CardContent>
             </Card>
 
@@ -385,11 +399,11 @@ export default function FigmaHome() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <p className="text-white">Dompet Kulit dengan Hook Custom</p>
+                  <p className="text-white">Bingkai Ukir Custom</p>
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="text-lg mb-2">Dompet Kulit Custom</h3>
+                <h3 className="text-lg mb-2">Bingkai Ukir</h3>
                 <p className="text-sm text-muted-foreground">Laser Cutting - Premium Leather Wallet</p>
               </CardContent>
             </Card>
@@ -421,11 +435,11 @@ export default function FigmaHome() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <p className="text-white">Gantungan Kunci Kulit Custom</p>
+                  <p className="text-white">ID Card Holder Kulit Custom</p>
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="text-lg mb-2">Gantungan Kunci Kulit</h3>
+                <h3 className="text-lg mb-2">ID Card Holder Kulit Custom</h3>
                 <p className="text-sm text-muted-foreground">Laser Engraving - Masjid Besar Wanaraja</p>
               </CardContent>
             </Card>
@@ -439,12 +453,12 @@ export default function FigmaHome() {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <p className="text-white">Nomor Meja Kayu dengan Logo Engraving</p>
+                  <p className="text-white">Softcase HP dengan Logo Engraving</p>
                 </div>
               </div>
               <CardContent className="p-4">
-                <h3 className="text-lg mb-2">Nomor Meja Kayu</h3>
-                <p className="text-sm text-muted-foreground">Laser Cutting & Engraving - Table Numbers</p>
+                <h3 className="text-lg mb-2">Softcase Hp</h3>
+                <p className="text-sm text-muted-foreground">Laser Cutting & Engraving - Softcase</p>
               </CardContent>
             </Card>
           </div>
@@ -558,11 +572,10 @@ export default function FigmaHome() {
                       <MapPin className="h-6 w-6 text-[#dd7311]" />
                     </div>
                     <div>
-                      <h4 className="text-lg mb-2 font-normal">Alamat Workshop</h4>
+                      <h4 className="text-lg mb-2 font-normal">Alamat Tempat OJT</h4>
                       <p className="text-muted-foreground">
-                        Jl. Industri Raya No. 123<br />
-                        Kawasan Industri Modern<br />
-                        Jakarta Timur 13510, Indonesia
+                        QWHC+H8M, Suci, Kec. Karangpawitan, Kabupaten Garut, Jawa Barat<br />
+                        44151, Indonesia
                       </p>
                     </div>
                   </div>
@@ -695,7 +708,7 @@ export default function FigmaHome() {
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start space-x-2 text-gray-300">
                   <MapPin className="h-4 w-4 text-[#dd7311] flex-shrink-0 mt-0.5" />
-                  <span>Jl. Industri Raya No. 123, Jakarta Timur 13510</span>
+                  <span>QWHC+H8M, Suci, Kec. Karangpawitan, Kabupaten Garut, Jawa Barat</span>
                 </li>
                 <li className="flex items-center space-x-2 text-gray-300">
                   <Phone className="h-4 w-4 text-[#dd7311] flex-shrink-0" />

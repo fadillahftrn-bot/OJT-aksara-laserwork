@@ -1,6 +1,6 @@
 
   {
-      "name": "Update Source Code",
+      "name": "ojt-aksara-laserwork",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -47,6 +47,7 @@
           "tailwind-merge": "*",
           "vaul": "^1.1.2"
       },
+      "homepage": "http://aksaralaserwork.infinityfree.me",
       "devDependencies": {
           "@types/node": "^20.10.0",
           "@vitejs/plugin-react-swc": "^3.10.2",
