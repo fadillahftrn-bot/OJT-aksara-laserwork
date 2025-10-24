@@ -53,8 +53,14 @@
           "@vitejs/plugin-react-swc": "^3.10.2",
           "vite": "6.3.5"
       },
-      "scripts": {
-          "dev": "vite",
-          "build": "vite build"
-      }
+      {
+  "scripts": {
+    // Pastikan ini ada:
+    "build": "vite build", // atau perintah build Anda
+    
+    // TAMBAHKAN BARIS INI UNTUK MEMPERBAIKI IZIN:
+    "postinstall": "chmod +x node_modules/.bin/*" 
+  },
+  // ...
+}
   }
