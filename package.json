@@ -8,15 +8,11 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    
-    // ** PENTING: SOLUSI UNTUK EXIT CODE 126 DI VERCEL **
-    // Skrip ini memastikan izin eksekusi yang benar untuk binari Node.js
     "postinstall": "chmod +x node_modules/.bin/*" 
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    // <TAMBAHKAN DEPENDENSI LAIN ANDA DI SINI>
     "axios": "^1.6.8",
     "react-router-dom": "^6.23.1"
   },
@@ -30,7 +26,6 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "vite": "^5.2.0"
   },
-  // Untuk memastikan Vercel menggunakan versi Node yang kompatibel
   "engines": {
     "node": ">=18.0.0"
   }
